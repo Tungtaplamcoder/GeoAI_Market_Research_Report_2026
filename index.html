@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Nghiên Cứu Thị Trường: GeoAI / GIS / Geospatial Data Science 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .gradient-blue { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .gradient-green { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .gradient-orange { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .gradient-purple { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .tab-active { border-bottom: 3px solid #667eea; color: #667eea; font-weight: 600; }
+        .tab-inactive { color: #6b7280; }
+        .tab-inactive:hover { color: #4b5563; }
+        .skill-badge { transition: all 0.3s ease; }
+        .skill-badge:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .salary-bar { transition: width 1s ease-in-out; }
+        .swot-card { transition: all 0.3s ease; }
+        .swot-card:hover { transform: translateY(-4px); }
+        .animate-fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .table-row-hover:hover { background-color: #f9fafb; }
+        .nav-item { cursor: pointer; padding: 12px 20px; border-radius: 8px; transition: all 0.3s; }
+        .nav-item:hover { background-color: #f3f4f6; }
+        .nav-item.active { background-color: #eef2ff; color: #667eea; font-weight: 600; }
+        .callout-box { border-left: 4px solid; padding: 16px; border-radius: 8px; }
+        .callout-blue { background-color: #eff6ff; border-left-color: #3b82f6; }
+        .callout-green { background-color: #f0fdf4; border-left-color: #22c55e; }
+        .callout-orange { background-color: #fffbeb; border-left-color: #f59e0b; }
+        .callout-purple { background-color: #faf5ff; border-left-color: #a855f7; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="gradient-hero text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="animate-fade-in">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fas fa-globe-asia text-4xl"></i>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Báo Cáo Nghiên Cứu Thị Trường</span>
+                </div>
+                <h1 class="text-5xl font-bold mb-4 leading-tight">
+                    GeoAI / GIS / Geospatial Data Science
+                </h1>
+                <p class="text-2xl font-light mb-6 opacity-90">
+                    Phân Tích Toàn Diện: Nhu Cầu Tuyển Dụng, Triển Vọng Nghề Nghiệp & Cơ Hội Phát Triển
+                </p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Cập nhật: Tháng 9/2026</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Phạm vi: Việt Nam & Quốc tế</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Tăng trưởng ngành: 10.8% CAGR (2025-2030)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex overflow-x-auto gap-2 py-4" id="mainNav">
+                <div class="nav-item active whitespace-nowrap" onclick="showSection('overview', this)">
+                    <i class="fas fa-home mr-2"></i>Tổng Quan
+                </div>
+                <div class="nav-item whitespace-nowrap" onclick="showSection('vietnam', this)">
+                    <i class="fas fa-flag mr-2"></i>Thị Trường VN
+                </div>
+                <div class="nav-item whitespace-nowrap" onclick="showSection('global', this)">
+                    <i class="fas fa-globe mr-2"></i>Thị Trường Quốc Tế
+                </div>
+                <div class="nav-item whitespace-nowrap" onclick="showSection('jobs', this)">
+                    <i class="fas fa-briefcase mr-2"></i>Vị Trí & Lương
+                </div>
+                <div class="nav-item whitespace-nowrap" onclick="showSection('skills', this)">
+                    <i class="fas fa-tools mr-2"></i>Kỹ Năng
+                </div>
+                <div class="nav-item whitespace-nowrap" onclick="showSection('scholarships', this)">
+                    <i class="fas fa-graduation-cap mr-2"></i>Học Bổng
+                </div>
+                <div class="nav-item whitespace-nowrap" onclick="showSection('swot', this)">
+                    <i class="fas fa-balance-scale mr-2"></i>SWOT & Chiến Lược
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+
+        <!-- SECTION 1: TỔNG QUAN -->
+        <section id="overview" class="content-section animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-chart-pie text-purple-600"></i>
+                Tổng Quan Ngành GeoAI / Geospatial Data Science
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-rocket text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Tăng Trưởng</h3>
+                    </div>
+                    <p class="text-3xl font-bold text-purple-600 mb-2">10.8% CAGR</p>
+                    <p class="text-sm text-gray-600">Tốc độ tăng trưởng kép hàng năm dự kiến 2025-2030 tại Bắc Mỹ</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Nhu Cầu</h3>
+                    </div>
+                    <p class="text-3xl font-bold text-blue-600 mb-2">20,000-25,000</p>
+                    <p class="text-sm text-gray-600">Số lượng việc làm mở trong ngành địa không gian, dự kiến tăng gấp đôi trong 5 năm tới</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-brain text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">GeoAI</h3>
+                    </div>
+                    <p class="text-3xl font-bold text-green-600 mb-2">Core Infrastructure</p>
+                    <p class="text-sm text-gray-600">Trí tuệ không gian đang trở thành hạ tầng cốt lõi cho quản lý tài sản và đô thị thông minh</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 mb-12">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                    GeoAI là gì?
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    <strong>GeoAI (Geospatial Artificial Intelligence)</strong> là ứng dụng của trí tuệ nhân tạo, đặc biệt là machine learning và deep learning, vào dữ liệu và phân tích địa không gian. Khác với GIS truyền thống chỉ tập trung vào bản đồ và phân tích không gian cơ bản, GeoAI kết hợp các mô hình AI tiên tiến (CNN, U-Net, Transformers) để tự động hóa việc trích xuất đặc trưng, phân loại ảnh vệ tinh, phát hiện đối tượng và dự báo không gian.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mt-6">
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-semibold text-purple-700 mb-2"><i class="fas fa-check-circle text-green-500 mr-2"></i>Ứng dụng thực tế:</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Phân loại cây trồng, ước tính năng suất nông nghiệp</li>
+                            <li>• Giám sát biến đổi khí hậu và phá rừng</li>
+                            <li>• Quy hoạch đô thị thông minh và mạng lưới sạc EV</li>
+                            <li>• Phân tích rủi ro thiên tai và cháy rừng</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-semibold text-blue-700 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Vì sao "khát" nhân sự?</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Thiếu hụt chuyên gia kết hợp GIS + AI/ML</li>
+                            <li>• Dữ liệu vệ tinh tăng theo cấp số nhân</li>
+                            <li>• Chính phủ và doanh nghiệp đầu tư mạnh vào Smart Cities</li>
+                            <li>• Phòng thủ và an ninh quốc gia cần GEOINT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box callout-blue mb-8">
+                <p class="text-gray-800">
+                    <strong><i class="fas fa-exclamation-triangle text-blue-600 mr-2"></i>Thực trạng thị trường:</strong>
+                    Nhu cầu nhân lực geospatial đang mở rộng với tốc độ vượt xa số lượng sinh viên tốt nghiệp đủ tiêu chuẩn. Tại Singapore, chính phủ đã xác định phát triển nhân tài là "nút thắt cổ chai" chính trong kế hoạch trở thành trung tâm geospatial toàn cầu.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THỊ TRƯỜNG VIỆT NAM -->
+        <section id="vietnam" class="content-section hidden animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-flag text-red-600"></i>
+                Thị Trường Việt Nam: Thực Trạng & Cơ Hội
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-chart-line text-green-600"></i>
+                        Giai Đoạn Phát Triển
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-green-600 font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Giai đoạn đầu (Early Stage)</h4>
+                                <p class="text-sm text-gray-600">Thị trường GeoAI tại Việt Nam đang ở giai đoạn khởi đầu, chủ yếu tập trung vào GIS truyền thống và phân tích không gian cơ bản.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-blue-600 font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Tăng trưởng IT chung</h4>
+                                <p class="text-sm text-gray-600">Ngành CNTT Việt Nam tăng 64% tuyển dụng trong Q4/2026, với nhu cầu mạnh cho AI, data và technical roles.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600 font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Data Science hot</h4>
+                                <p class="text-sm text-gray-600">Data Analyst, Data Scientist, BI Analyst chiếm 5.9% tổng nhu cầu tuyển dụng IT năm 2024.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-building text-blue-600"></i>
+                        Nhóm Tuyển Dụng Chính
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 rounded-lg p-3">
+                            <h4 class="font-semibold text-blue-800 text-sm mb-1"><i class="fas fa-satellite text-blue-600 mr-2"></i>Doanh nghiệp Công nghệ & GIS</h4>
+                            <p class="text-xs text-gray-700">Esri Vietnam, VNPT, Viettel, FPT, IOTLink, SOCOTEC, HASKONING</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-3">
+                            <h4 class="font-semibold text-green-800 text-sm mb-1"><i class="fas fa-city text-green-600 mr-2"></i>Đô thị thông minh & Hạ tầng</h4>
+                            <p class="text-xs text-gray-700">Các dự án Smart City, bản đồ tài sản hạ tầng đô thị, quy hoạch đô thị</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-3">
+                            <h4 class="font-semibold text-purple-800 text-sm mb-1"><i class="fas fa-landmark text-purple-600 mr-2"></i>Viện/Bộ/Sở Nhà nước</h4>
+                            <p class="text-xs text-gray-700">Bộ Tài nguyên & Môi trường, Sở Xây dựng, các viện nghiên cứu địa chính</p>
+                        </div>
+                        <div class="bg-orange-50 rounded-lg p-3">
+                            <h4 class="font-semibold text-orange-800 text-sm mb-1"><i class="fas fa-oil-well text-orange-600 mr-2"></i>Dầu khí & Bất động sản</h4>
+                            <p class="text-xs text-gray-700">Tập đoàn dầu khí (quản lý đường ống), bất động sản (định vị tài sản), vận tải logistics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-newspaper text-purple-600 mr-2"></i>
+                    Ví dụ vị trí tuyển dụng thực tế (2026)
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                        <h4 class="font-semibold text-gray-800 mb-2">Phân Tích Không Gian GIS</h4>
+                        <p class="text-sm text-gray-600 mb-2"><i class="fas fa-building text-blue-600 mr-1"></i>VNPT - Chi nhánh Tập đoàn</p>
+                        <p class="text-xs text-gray-500">Deadline: 28/09/2026</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                        <h4 class="font-semibold text-gray-800 mb-2">GIS Support</h4>
+                        <p class="text-sm text-gray-600 mb-2"><i class="fas fa-building text-purple-600 mr-1"></i>Esri Việt Nam</p>
+                        <p class="text-xs text-gray-500">Yêu cầu: Cử nhân CNTT hoặc Địa lý</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                        <h4 class="font-semibold text-gray-800 mb-2">Kỹ Sư Phân Tích GIS</h4>
+                        <p class="text-sm text-gray-600 mb-2"><i class="fas fa-building text-green-600 mr-1"></i>Viettel (VTCC)</p>
+                        <p class="text-xs text-gray-500">Lập bản đồ số, CSDL giao thông, 3D GIS</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                        <h4 class="font-semibold text-gray-800 mb-2">Chuyên Viên GIS/GeoAI</h4>
+                        <p class="text-sm text-gray-600 mb-2"><i class="fas fa-building text-orange-600 mr-1"></i>Công ty tư vấn đô thị</p>
+                        <p class="text-xs text-gray-500">Dự án bản đồ tài sản hạ tầng đô thị</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box callout-orange mt-8">
+                <p class="text-gray-800">
+                    <strong><i class="fas fa-lightbulb text-orange-600 mr-2"></i>Nhận định:</strong>
+                    Thị trường Việt Nam đang ở giai đoạn đầu nhưng có tiềm năng tăng trưởng mạnh nhờ chính sách chuyển đổi số quốc gia, đầu tư vào Smart City (Hà Nội, TP.HCM, Đà Nẵng), và nhu cầu từ các tập đoàn lớn như Viettel, VNPT, FPT. Tuy nhiên, số lượng vị trí GeoAI thuần túy còn hạn chế - phần lớn là GIS Analyst/Developer truyền thống.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THỊ TRƯỜNG QUỐC TẾ -->
+        <section id="global" class="content-section hidden animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-globe text-blue-600"></i>
+                Thị Trường Quốc Tế: Xu Hướng & Ngành Trọng Điểm
+            </h2>
+
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8 mb-12">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-chart-line text-green-600 mr-2"></i>
+                    Xu Hướng Toàn Cầu 2025-2030
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <p class="text-3xl font-bold text-green-600 mb-2">10.8%</p>
+                        <p class="text-sm text-gray-700">CAGR tăng trưởng việc làm geospatial tại Bắc Mỹ</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <p class="text-3xl font-bold text-blue-600 mb-2">35%</p>
+                        <p class="text-sm text-gray-700">Tăng trưởng việc làm Data Scientist (BLS 2025-2034)</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <p class="text-3xl font-bold text-purple-600 mb-2">2x</p>
+                        <p class="text-sm text-gray-700">Số việc làm geospatial dự kiến tăng gấp đôi trong 5 năm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <i class="fas fa-industry text-purple-600"></i>
+                    Ngành Công Nghiệp "Khát" Nhân Sự GeoAI
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl shadow-lg p-5 border-t-4 border-green-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-tree text-green-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Lâm nghiệp & Khí hậu</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Giám sát phá rừng, carbon credit, Climate Tech, ESG reporting</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-5 border-t-4 border-yellow-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-tractor text-yellow-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Nông nghiệp thông minh</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">AgriTech, phân loại cây trồng, ước tính năng suất, crop stress detection</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-5 border-t-4 border-blue-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-satellite text-blue-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Vệ tinh & Không gian</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Earth Observation, satellite imagery analysis, GEOINT, NGA</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-5 border-t-4 border-red-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-truck text-red-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Logistics & Vận tải</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Tối ưu tuyến đường, location intelligence, fleet management</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-5 border-t-4 border-indigo-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-indigo-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Quốc phòng & An ninh</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">GEOINT, defense agencies, surveillance, border monitoring</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-5 border-t-4 border-cyan-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-city text-cyan-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Smart Cities</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Urban planning, EV charging network, heat mitigation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
+                    Điểm Nóng Tuyển Dụng Theo Khu Vực
+                </h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-4 py-2">
+                        <h4 class="font-semibold text-gray-800 flex items-center gap-2">
+                            <i class="fas fa-flag-usa text-blue-600"></i> Hoa Kỳ
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Washington DC ($139K/năm), San Francisco ($180K), New York ($134K). Ngành defense (NGA), tech (Google Earth AI), consulting (WSP, Stantec) tuyển mạnh.
+                        </p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4 py-2">
+                        <h4 class="font-semibold text-gray-800 flex items-center gap-2">
+                            <i class="fas fa-flag text-green-600"></i> Châu Âu
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-1">
+                            London (£35K-£130K), Berlin (€48K-€82K), Amsterdam (€65K-€75K), Munich (€82K). EUMETSAT (Đức), ESA, các startup ClimateTech.
+                        </p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-4 py-2">
+                        <h4 class="font-semibold text-gray-800 flex items-center gap-2">
+                            <i class="fas fa-torii-gate text-red-600"></i> Singapore & Nhật Bản
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Singapore đang đầu tư mạnh vào Geospatial Masterplan 2024-2033, NUS ra mắt chương trình Geospatial Intelligence đầu tiên ở châu Á (2026).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box callout-green mt-8">
+                <p class="text-gray-800">
+                    <strong><i class="fas fa-check-circle text-green-600 mr-2"></i>Cơ hội cho người Việt:</strong>
+                    Các vị trí remote global đang mở rộng, đặc biệt ở startup và scale-up. Nhiều công ty chấp nhận làm việc từ xa với mức lương USD/EUR, tạo cơ hội cho nhân sự Việt Nam có kỹ năng GeoAI + tiếng Anh tốt.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: VỊ TRÍ & MỨC LƯƠNG -->
+        <section id="jobs" class="content-section hidden animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-briefcase text-purple-600"></i>
+                Vị Trí Công Việc & Mức Lương Tham Khảo
+            </h2>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-list text-blue-600 mr-2"></i>
+                    Job Titles Tiêu Chuẩn Trong Ngành
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4">
+                        <h4 class="font-bold text-purple-700 mb-1">GeoAI Engineer</h4>
+                        <p class="text-xs text-gray-600">Thiết kế, xây dựng và triển khai giải pháp AI không gian</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4">
+                        <h4 class="font-bold text-blue-700 mb-1">Geospatial Data Scientist</h4>
+                        <p class="text-xs text-gray-600">Phân tích dữ liệu vệ tinh, xây dựng mô hình ML</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-lg p-4">
+                        <h4 class="font-bold text-green-700 mb-1">GIS Developer</h4>
+                        <p class="text-xs text-gray-600">Phát triển ứng dụng webGIS, API không gian</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-4">
+                        <h4 class="font-bold text-teal-700 mb-1">Remote Sensing Analyst</h4>
+                        <p class="text-xs text-gray-600">Phân tích ảnh vệ tinh, LiDAR, SAR</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-cyan-50 to-indigo-50 rounded-lg p-4">
+                        <h4 class="font-bold text-cyan-700 mb-1">Spatial Software Engineer</h4>
+                        <p class="text-xs text-gray-600">Kỹ sư phần mềm chuyên về xử lý dữ liệu không gian</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-4">
+                        <h4 class="font-bold text-indigo-700 mb-1">Earth Observation Data Scientist</h4>
+                        <p class="text-xs text-gray-600">Khoa học dữ liệu cho quan sát Trái Đất</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <!-- VIỆT NAM -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <i class="fas fa-flag text-red-600"></i>
+                        Mức Lương Tại Việt Nam (VNĐ/tháng)
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Entry/Freshman (0-1 năm)</span>
+                                <span class="text-sm font-bold text-blue-600">15-25 triệu</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="salary-bar bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Mid-level (2-4 năm)</span>
+                                <span class="text-sm font-bold text-green-600">25-45 triệu</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="salary-bar bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style="width: 55%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Senior/Lead (5+ năm)</span>
+                                <span class="text-sm font-bold text-purple-600">45-80+ triệu</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="salary-bar bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">
+                        * Data Scientist tại VN: 20-95 triệu/tháng (2026)<br>
+                        * Geospatial Information Scientist: ~26 triệu/tháng (trung bình)
+                    </p>
+                </div>
+
+                <!-- QUỐC TẾ -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <i class="fas fa-globe text-blue-600"></i>
+                        Mức Lương Quốc Tế (USD/năm)
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Entry (0-1 năm)</span>
+                                <span class="text-sm font-bold text-blue-600">$55K - $80K</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="salary-bar bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full" style="width: 35%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">GIS Analyst Junior: $55K (DC)</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Mid-level (2-4 năm)</span>
+                                <span class="text-sm font-bold text-green-600">$85K - $125K</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="salary-bar bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style="width: 65%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Geospatial Data Scientist: $124K (Mỹ)</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Senior/Lead (5+ năm)</span>
+                                <span class="text-sm font-bold text-purple-600">$130K - $200K+</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="salary-bar bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Senior GeoAI: $180K (SF), Staff: $200K+ (NY)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-table text-indigo-600 mr-2"></i>
+                    Bảng So Sánh Chi Tiết Theo Quốc Gia
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-gray-100 border-b">
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Vị trí / Cấp độ</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Việt Nam</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Mỹ</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">UK</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Đức</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Hà Lan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-row-hover">
+                            <tr class="border-b">
+                                <td class="py-3 px-4 font-medium text-gray-800">GIS Analyst (Junior)</td>
+                                <td class="py-3 px-4 text-gray-700">15-20M VNĐ</td>
+                                <td class="py-3 px-4 text-gray-700">$55K-65K</td>
+                                <td class="py-3 px-4 text-gray-700">£32K-38K</td>
+                                <td class="py-3 px-4 text-gray-700">€35K-42K</td>
+                                <td class="py-3 px-4 text-gray-700">€38K-45K</td>
+                            </tr>
+                            <tr class="border-b bg-blue-50">
+                                <td class="py-3 px-4 font-medium text-gray-800">Geospatial Data Scientist (Mid)</td>
+                                <td class="py-3 px-4 text-gray-700">30-50M VNĐ</td>
+                                <td class="py-3 px-4 text-gray-700">$98K-136K</td>
+                                <td class="py-3 px-4 text-gray-700">£55K-78K</td>
+                                <td class="py-3 px-4 text-gray-700">€65K-82K</td>
+                                <td class="py-3 px-4 text-gray-700">€65K-75K</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-3 px-4 font-medium text-gray-800">Senior GeoAI Engineer</td>
+                                <td class="py-3 px-4 text-gray-700">50-80M+ VNĐ</td>
+                                <td class="py-3 px-4 text-gray-700">$155K-180K</td>
+                                <td class="py-3 px-4 text-gray-700">£85K-130K</td>
+                                <td class="py-3 px-4 text-gray-700">€82K-95K</td>
+                                <td class="py-3 px-4 text-gray-700">€75K-90K</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="py-3 px-4 font-medium text-gray-800">Lead / Principal</td>
+                                <td class="py-3 px-4 text-gray-700">80M+ VNĐ</td>
+                                <td class="py-3 px-4 text-gray-700">$170K-240K</td>
+                                <td class="py-3 px-4 text-gray-700">£95K-182K</td>
+                                <td class="py-3 px-4 text-gray-700">€95K-120K</td>
+                                <td class="py-3 px-4 text-gray-700">€90K-110K</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">
+                    * Tỷ giá tham khảo: 1 USD ≈ 25,000 VNĐ, 1 GBP ≈ 32,000 VNĐ, 1 EUR ≈ 27,000 VNĐ (2026)<br>
+                    * Nguồn: Salary.com, ZipRecruiter, Geospatial Careers, The Spatial Net (BLS 2025)
+                </p>
+            </div>
+
+            <div class="callout-box callout-purple mt-8">
+                <p class="text-gray-800">
+                    <strong><i class="fas fa-chart-bar text-purple-600 mr-2"></i>Nhận xét:</strong>
+                    Mức lương GeoAI tại Việt Nam thấp hơn 4-6 lần so với Mỹ/Âu, nhưng chi phí sinh hoạt cũng thấp hơn đáng kể. Với remote work cho công ty quốc tế, nhân sự Việt có thể đạt mức $60K-90K/năm (~1.5-2.3 tỷ VNĐ) - cao gấp 3-5 lần so với làm trong nước.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: KỸ NĂNG & CÔNG NGHỆ -->
+        <section id="skills" class="content-section hidden animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-tools text-green-600"></i>
+                Bộ Kỹ Năng & Công Nghệ Trọng Tâm
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <!-- CORE CS & AI -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <i class="fas fa-brain text-purple-600"></i>
+                        Core CS & AI / Machine Learning
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">Ngôn ngữ lập trình</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Python (bắt buộc)</span>
+                                <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">JavaScript/TypeScript</span>
+                                <span class="skill-badge bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">C++</span>
+                                <span class="skill-badge bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Rust (tùy chọn)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">ML/DL Frameworks</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">PyTorch</span>
+                                <span class="skill-badge bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-medium">TensorFlow</span>
+                                <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">scikit-learn</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">Kiến trúc Deep Learning cho ảnh vệ tinh</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-medium">CNN</span>
+                                <span class="skill-badge bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs font-medium">U-Net</span>
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Vision Transformers (ViT)</span>
+                                <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">ResNet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GEOSPATIAL & GIS -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <i class="fas fa-globe-asia text-blue-600"></i>
+                        Geospatial & GIS Core
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">Desktop GIS</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">QGIS (miễn phí)</span>
+                                <span class="skill-badge bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">ArcGIS Pro</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">Spatial Databases</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">PostGIS (bắt buộc)</span>
+                                <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">Oracle Spatial</span>
+                                <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">H3 (Uber)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">Python Geospatial Libraries</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">GeoPandas</span>
+                                <span class="skill-badge bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-medium">Rasterio</span>
+                                <span class="skill-badge bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs font-medium">GDAL/OGR</span>
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Shapely</span>
+                                <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">xarray</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">WebGIS & Visualization</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-medium">Leaflet.js</span>
+                                <span class="skill-badge bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Mapbox GL</span>
+                                <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">OpenLayers</span>
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Kepler.gl</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2 text-sm">Cloud & Earth Observation Platforms</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">Google Earth Engine</span>
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Sentinel Hub</span>
+                                <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">AWS Earth on Demand</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                    Kỹ Năng "Must-Have" Theo Khảo Sát GEOAI 2026
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-3">Kỹ năng kỹ thuật cốt lõi</h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-green-500 mt-1"></i>
+                                <span><strong>Python</strong> - Ngôn ngữ chính cho GeoAI workflows</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-green-500 mt-1"></i>
+                                <span><strong>GIS platforms</strong> (ArcGIS, QGIS) - Phân tích không gian</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-green-500 mt-1"></i>
+                                <span><strong>Spatial Databases</strong> (PostGIS, Oracle Spatial, H3)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-green-500 mt-1"></i>
+                                <span><strong>Remote Sensing</strong> - Raster, vector, point cloud analysis</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-3">Kỹ năng bổ trợ quan trọng</h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-blue-500 mt-1"></i>
+                                <span><strong>PyTorch/TensorFlow</strong> - Training deep learning models</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-blue-500 mt-1"></i>
+                                <span><strong>API Development</strong> - REST, GraphQL cho spatial services</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-blue-500 mt-1"></i>
+                                <span><strong>Cloud Deployment</strong> - Docker, Kubernetes, AWS/GCP/Azure</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-blue-500 mt-1"></i>
+                                <span><strong>Spatial Data Science</strong> - Thống kê không gian, geostatistics</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box callout-orange">
+                <p class="text-gray-800">
+                    <strong><i class="fas fa-lightbulb text-orange-600 mr-2"></i>Lời khuyên:</strong>
+                    Bạn không cần phải là software engineer xuất sắc, nhưng phải thoải mái viết và adapt Python scripts, làm việc với APIs, và hiểu data structures. Spatial analysts không đọc được Python code sẽ ngày càng phụ thuộc vào người khác để implement AI workflows.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 6: HỌC BỔNG & NGHIÊN CỨU -->
+        <section id="scholarships" class="content-section hidden animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-graduation-cap text-indigo-600"></i>
+                Cơ Hội Du Học, Học Bổng & Nghiên Cứu Quốc Tế
+            </h2>
+
+            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8 mb-12">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-info-circle text-indigo-600 mr-2"></i>
+                    Mức Độ Ưu Ái Học Bổng
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Các chương trình Master/PhD về <strong>Earth Observation, Geoinformatics, Geo-information Science</strong> đang rất "khát" sinh viên có background CNTT/Toán-Tin với kiến thức địa không gian. Đây là lợi thế lớn vì hầu hết ứng viên truyền thống đến từ ngành Địa lý hoặc Môi trường - thiếu kỹ năng lập trình và AI.
+                </p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <p class="text-2xl font-bold text-green-600 mb-1">Cao</p>
+                        <p class="text-xs text-gray-600">EU (Erasmus+, DAAD)</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <p class="text-2xl font-bold text-blue-600 mb-1">Trung bình-Cao</p>
+                        <p class="text-xs text-gray-600">Hà Lan (ITC Excellence)</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <p class="text-2xl font-bold text-purple-600 mb-1">Trung bình</p>
+                        <p class="text-xs text-gray-600">UK, Úc (Chevening, RTP)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-university text-purple-600 mr-2"></i>
+                    Chương Trình & Học Bổng Nổi Bật
+                </h3>
+                <div class="space-y-6">
+                    <!-- Hà Lan -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-wind text-orange-600 text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">
+                                    🇳🇱 University of Twente - ITC (Hà Lan)
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    <strong>Chương trình:</strong> MSc Geo-information Science and Earth Observation (2 năm)
+                                </p>
+                                <div class="bg-orange-50 rounded-lg p-4 mb-3">
+                                    <h5 class="font-semibold text-orange-800 text-sm mb-2">Học bổng ITC Excellence</h5>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• <strong>Trị giá:</strong> €25,000 (sinh hoạt phí) + waiver học phí €32,370</li>
+                                        <li>• <strong>Tổng chi phí:</strong> €74,370 → Tự túc chỉ €17,000</li>
+                                        <li>• <strong>Deadline:</strong> 1/2 và 1/4 hàng năm</li>
+                                        <li>• <strong>Yêu cầu:</strong> GPA xuất sắc, leadership potential</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-blue-800 text-sm mb-2">Early Bird Programme - 40% học phí</h5>
+                                    <p class="text-xs text-gray-700">
+                                        Đóng học phí trước 1/3 → Giảm 40% mỗi năm (~€17,580 tiết kiệm)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Erasmus+ GEM -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-600">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-flag-eu text-blue-600 text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">
+                                    🇪🇺 Erasmus Mundus GEM (Geospatial Environmental Management)
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    <strong>Chương trình:</strong> MSc joint degree 4 trường (Hà Lan, Thụy Điển, Estonia, Bỉ)
+                                </p>
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-blue-800 text-sm mb-2">Học bổng Erasmus+ 2026-2030</h5>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• <strong>70 học bổng toàn phần</strong> cho 4 khóa (từ 9/2026)</li>
+                                        <li>• <strong>Bao gồm:</strong> Học phí + sinh hoạt phí + bảo hiểm + travel</li>
+                                        <li>• <strong>4 tracks:</strong> Geospatial Planner, Analyst, Developer, Modeller</li>
+                                        <li>• <strong>Tỷ lệ việc làm:</strong> 95%, 50% học tiếp PhD</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UK -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-red-500">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-crown text-red-600 text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">
+                                    🇬🇧 University of Edinburgh - School of GeoSciences
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    <strong>Chương trình:</strong> MSc Geographical Information Science and Earth Observation
+                                </p>
+                                <div class="bg-red-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-red-800 text-sm mb-2">Học bổng 2026-27</h5>
+                                    <p class="text-xs text-gray-700">
+                                        <strong>1 học bổng toàn phần</strong> cho sinh viên quốc tế, hỗ trợ từ Data Lab Academy và Scottish Funding Council.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Đức -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-yellow-500">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-beer text-yellow-600 text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">
+                                    🇩🇪 DAAD Scholarships (Đức)
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    <strong>Chương trình:</strong> MSc Geoinformatics, Remote Sensing tại các trường như TU Munich, University of Münster, FU Berlin
+                                </p>
+                                <div class="bg-yellow-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-yellow-800 text-sm mb-2">Học bổng DAAD</h5>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• <strong>Thời hạn:</strong> Tháng 12 hàng năm (start 10/2026)</li>
+                                        <li>• <strong>Trị giá:</strong> €934/tháng (Master), €1,200/tháng (PhD) + học phí + travel</li>
+                                        <li>• <strong>Yêu cầu:</strong> GPA ≥ 7.5, IELTS 6.5+, 2 năm kinh nghiệm (tùy program)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box callout-green">
+                <p class="text-gray-800">
+                    <strong><i class="fas fa-check-circle text-green-600 mr-2"></i>Chiến lược apply:</strong>
+                    Ứng viên CNTT/Toán-Tin có lợi thế lớn vì các lab GeoAI cần người biết code Python, PyTorch, xử lý dữ liệu lớn. Hãy nhấn mạnh projects về computer vision, satellite imagery, hoặc spatial analysis trong SOP (Statement of Purpose). Liên hệ giáo sư trước khi apply (cold email) để tăng cơ hội nhận PhD funding.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SWOT & CHIẾN LƯỢC -->
+        <section id="swot" class="content-section hidden animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-balance-scale text-red-600"></i>
+                SWOT & Lời Khuyên Chiến Lược
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <!-- STRENGTHS -->
+                <div class="swot-card bg-gradient-to-br from-green-50 to-green-100 rounded-xl shadow-lg p-6 border-t-4 border-green-500">
+                    <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-thumbs-up text-green-600"></i>
+                        Điểm Mạnh (Strengths)
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                            <span><strong>Ngách hiếm:</strong> Kết hợp GIS + AI/ML là profile độc đáo, ít cạnh tranh hơn pure software engineer</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                            <span><strong>Đa ngành:</strong> Có thể làm ở nhiều lĩnh vực (climate, agriculture, defense, smart cities)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                            <span><strong>Lương cao:</strong> Mức lương GeoAI tại quốc tế thuộc top trong ngành geospatial</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                            <span><strong>Remote-friendly:</strong> Nhiều công ty chấp nhận làm việc từ xa global</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                            <span><strong>Impact cao:</strong> Giải quyết vấn đề thực tế (biến đổi khí hậu, an ninh lương thực)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- WEAKNESSES -->
+                <div class="swot-card bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-lg p-6 border-t-4 border-red-500">
+                    <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-thumbs-down text-red-600"></i>
+                        Điểm Yếu (Weaknesses)
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times-circle text-red-600 mt-1"></i>
+                            <span><strong>Học curve cao:</strong> Phải học cả GIS domain knowledge + AI/ML + software engineering</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times-circle text-red-600 mt-1"></i>
+                            <span><strong>Thị trường VN nhỏ:</strong> Số lượng việc làm GeoAI thuần túy tại Việt Nam còn hạn chế</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times-circle text-red-600 mt-1"></i>
+                            <span><strong>Công cụ phức tạp:</strong> PostGIS, GDAL, QGIS có learning curve dốc</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times-circle text-red-600 mt-1"></i>
+                            <span><strong>Dữ liệu khó tiếp cận:</strong> Ảnh vệ tinh độ phân giải cao thường đắt hoặc cần partnership</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- OPPORTUNITIES -->
+                <div class="swot-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-door-open text-blue-600"></i>
+                        Cơ Hội (Opportunities)
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-up text-blue-600 mt-1"></i>
+                            <span><strong>Tăng trưởng 10.8% CAGR:</strong> Ngành geospatial đang bùng nổ toàn cầu</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-up text-blue-600 mt-1"></i>
+                            <span><strong>Climate Tech boom:</strong> ESG, carbon credit, giám sát rừng tạo nhu cầu lớn</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-up text-blue-600 mt-1"></i>
+                            <span><strong>Smart Cities:</strong> Việt Nam và ASEAN đầu tư mạnh vào đô thị thông minh</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-up text-blue-600 mt-1"></i>
+                            <span><strong>Học bổng dồi dào:</strong> Erasmus+, ITC, DAAD ưu tiên ứng viên CNTT</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-up text-blue-600 mt-1"></i>
+                            <span><strong>Freelance/Consulting:</strong> Upwork, Toptal có nhiều job geospatial remote</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- THREATS -->
+                <div class="swot-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl shadow-lg p-6 border-t-4 border-orange-500">
+                    <h3 class="text-xl font-bold text-orange-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-exclamation-triangle text-orange-600"></i>
+                        Thách Thức (Threats)
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-down text-orange-600 mt-1"></i>
+                            <span><strong>AutoML tools:</strong> Google Earth AI, Esri GeoAI tự động hóa một số tasks cơ bản</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-down text-orange-600 mt-1"></i>
+                            <span><strong>Cạnh tranh từ data scientist:</strong> Pure DS có thể pivot sang geospatial dễ</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-down text-orange-600 mt-1"></i>
+                            <span><strong>Phụ thuộc vào chính sách:</strong> Defense/GEOINT nhạy cảm với chính trị, visa</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-arrow-down text-orange-600 mt-1"></i>
+                            <span><strong>Công nghệ thay đổi nhanh:</strong> Phải liên tục học frameworks, models mới</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                    <i class="fas fa-chess text-purple-600 mr-2"></i>
+                    Chiến Lược "Lõi Vững - Ngách Nhọn"
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-blue-700 mb-4">
+                            <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
+                            Lõi Vững (Core Foundation)
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-blue-800 text-sm mb-2">1. Python + Data Science</h5>
+                                <p class="text-xs text-gray-700">Thành thạo pandas, numpy, scikit-learn, PyTorch. Đây là nền tảng bắt buộc.</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-blue-800 text-sm mb-2">2. SQL + PostGIS</h5>
+                                <p class="text-xs text-gray-700">Hiểu spatial queries (ST_Intersects, ST_Distance), indexing (GiST).</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-blue-800 text-sm mb-2">3. Git + Docker</h5>
+                                <p class="text-xs text-gray-700">Version control và deployment - kỹ năng software engineer bắt buộc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-green-700 mb-4">
+                            <i class="fas fa-bullseye text-green-600 mr-2"></i>
+                            Ngách Nhọn (Specialization)
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-green-800 text-sm mb-2">1. Chọn 1 domain</h5>
+                                <p class="text-xs text-gray-700">Climate (phá rừng, carbon), Agriculture (crop classification), hoặc Urban (traffic, heat islands).</p>
+                            </div>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-green-800 text-sm mb-2">2. Master 1-2 tools</h5>
+                                <p class="text-xs text-gray-700">Ví dụ: Google Earth Engine + PyTorch, hoặc QGIS + GeoPandas + U-Net.</p>
+                            </div>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-green-800 text-sm mb-2">3. Build portfolio</h5>
+                                <p class="text-xs text-gray-700">3-5 projects trên GitHub: satellite imagery classification, change detection, spatial prediction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="callout-box callout-blue">
+                    <p class="text-gray-800 text-sm">
+                        <strong><i class="fas fa-user-graduate text-blue-600 mr-2"></i>Sinh viên năm 1-2:</strong>
+                        Tập trung học Python, SQL, toán (linear algebra, statistics). Tham gia Kaggle competitions về computer vision.
+                    </p>
+                </div>
+                <div class="callout-box callout-green">
+                    <p class="text-gray-800 text-sm">
+                        <strong><i class="fas fa-user-clock text-green-600 mr-2"></i>Sinh viên năm 3-4:</strong>
+                        Học QGIS, PostGIS, GeoPandas. Làm đồ án về satellite imagery (dùng GEE miễn phí). Apply internship tại Esri VN, VNPT, Viettel.
+                    </p>
+                </div>
+                <div class="callout-box callout-purple">
+                    <p class="text-gray-800 text-sm">
+                        <strong><i class="fas fa-rocket text-purple-600 mr-2"></i>Fresh graduate:</strong>
+                        Apply job GIS Analyst/Developer tại VN để tích lũy 1-2 năm kinh nghiệm. Song song apply học bổng Master quốc tế (ITC, GEM, DAAD).
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+                    <i class="fas fa-quote-left text-purple-600 mr-2"></i>
+                    Lời Khuyên Cuối Cùng
+                </h3>
+                <p class="text-gray-800 text-center leading-relaxed">
+                    <strong>GeoAI không dành cho số đông</strong> - nhưng nếu bạn kiên trì, đây là một trong những ngách <strong>có ROI cao nhất</strong> trong CNTT hiện nay. Kết hợp được <strong>lương cao</strong> (USD/EUR), <strong>impact thực tế</strong> (climate, food security), và <strong>cơ hội du học</strong> (học bổng dồi dào). Hãy bắt đầu từ hôm nay với 1 project nhỏ trên Google Earth Engine!
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fas fa-file-alt text-purple-400"></i>
+                        Về Báo Cáo
+                    </h4>
+                    <p class="text-sm text-gray-300">
+                        Báo cáo nghiên cứu thị trường toàn diện về GeoAI / GIS / Geospatial Data Science, cập nhật tháng 9/2026.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fas fa-book text-blue-400"></i>
+                        Tài Liệu Tham Khảo
+                    </h4>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• USC Spatial Sciences Institute (2025-2035 Trends)</li>
+                        <li>• U.S. BLS Occupational Outlook (2025)</li>
+                        <li>• Geospatial Careers Salary Benchmark (2026)</li>
+                        <li>• UNESCO AI Readiness Vietnam (2024)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fas fa-link text-green-400"></i>
+                        Liên Kết Hữu Ích
+                    </h4>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• <a href="https://jobs.geosecuretech.com/jobs/geoai" target="_blank" class="text-purple-300 hover:underline">GeoSecureTech Jobs</a></li>
+                        <li>• <a href="https://www.geospatial.careers/" target="_blank" class="text-purple-300 hover:underline">Geospatial Careers</a></li>
+                        <li>• <a href="https://www.utwente.nl/en/itc/" target="_blank" class="text-purple-300 hover:underline">University of Twente ITC</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2026 Báo Cáo Nghiên Cứu Thị Trường GeoAI. Dữ liệu tổng hợp từ nhiều nguồn công khai.</p>
+                <p class="mt-2">Cập nhật lần cuối: 27/09/2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Tab Navigation -->
+    <script>
+        function showSection(sectionId, element) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            // Update nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            element.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
